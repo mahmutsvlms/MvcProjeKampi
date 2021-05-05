@@ -24,6 +24,6 @@ namespace EntityLayer.Concreate
 
         public ICollection<Heading> Headings { get; set; }
         //Writer ile Heading sınıflarını ilişkilendiriyoruz.
-        public ICollection<Content> Contents { get; set; }
+       public ICollection<Content> Contents { get; set; }
     }
 }
