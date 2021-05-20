@@ -25,21 +25,20 @@ namespace BusinessLayer.Concrete
             _categorydal.Insert(category);
         }
 
+        public void CategoryDelete(Category category)
+        {
+            _categorydal.Delete(category);
+        }
+
+        public Category GetByID(int id)
+        {
+            return _categorydal.Get(X => X.CategoryID == id);
+        }
+
+
         public List<Category> GetList()
         {
             return _categorydal.List();
         }
-
-        //public void CategoryAddBl(Category p)
-        //{
-        //    if(p.CategoryName=="" || p.CategoryStatus==false || p.CategoryName.Length<=2)
-        //    {
-        //        //hata mesajı
-        //    }
-        //    else
-        //    {
-        //        _categorydal.Insert(p);
-        //    }
-       //}
     }
 }
