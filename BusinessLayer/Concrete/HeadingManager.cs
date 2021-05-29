@@ -12,15 +12,45 @@ namespace BusinessLayer.Concrete
 {
     public class HeadingManager : IHeadingService
     {
-        private EfHeadingDal _efHeadingDal;
-        public HeadingManager(EfHeadingDal efHeadingDal)
+        IHeadingDal _headingDal;
+
+        public HeadingManager(IHeadingDal headingDal)
         {
-            _efHeadingDal = efHeadingDal;
+            _headingDal = headingDal;
         }
-        
+
+        //private EfHeadingDal _efHeadingDal;
+        //public HeadingManager(EfHeadingDal efHeadingDal)
+        //{
+        //    _efHeadingDal = efHeadingDal;
+        //}
+
+
+
+        public Heading GetByID(int id)
+        {
+            return _headingDal.Get(x => x.HeadingID == id);
+        }
+
         public List<Heading> GetList()
         {
-            return _efHeadingDal.List();
+            //return _efHeadingDal.List();
+            return _headingDal.List();
+        }
+
+        public void HeadingAdd(Heading heading)
+        {
+            _headingDal.Insert(heading);
+        }
+
+        public void HeadingDelete(Heading heading)
+        {
+            _headingDal.Delete(heading);
+        }
+
+        public void HeadingUpdate(Heading heading)
+        {
+            _headingDal.Update(heading);
         }
     }
 }
