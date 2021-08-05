@@ -36,13 +36,13 @@ namespace MvcProjeKampi.Roles
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string username)
-        {
-            Context c = new Context();
-            var x = c.Admins.FirstOrDefault(y => y.AdminUserName == username);
-            return new string[] { x.AdminRole };
+        //public override string[] GetRolesForUser(string username)
+        //{
+        //    Context c = new Context();
+        //    var x = c.Admins.FirstOrDefault(y => y.AdminUserName == username);
+        //    return new string[] { x.AdminRole };
 
-        }
+        //}
 
         public override string[] GetUsersInRole(string roleName)
         {

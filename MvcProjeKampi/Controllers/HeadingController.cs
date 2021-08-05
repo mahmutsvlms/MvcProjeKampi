@@ -75,5 +75,12 @@ namespace MvcProjeKampi.Controllers
             hm.HeadingDelete(HeadingValue);
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public JsonResult SetStatus(int id)
+        {
+            hm.Status(id);
+            return Json(JsonRequestBehavior.AllowGet);
+        }
     }
 }

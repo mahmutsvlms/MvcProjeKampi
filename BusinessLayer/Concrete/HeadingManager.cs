@@ -57,5 +57,10 @@ namespace BusinessLayer.Concrete
         {
             _headingDal.Update(heading);
         }
+
+        public void Status(int id)
+        {
+            _headingDal.Status(id);
+        }
     }
 }

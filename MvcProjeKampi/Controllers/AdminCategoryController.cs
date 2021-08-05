@@ -15,7 +15,7 @@ namespace MvcProjeKampi.Controllers
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
 
-        [Authorize(Roles ="B")]
+        [Authorize]
 
         public ActionResult Index()
         {
