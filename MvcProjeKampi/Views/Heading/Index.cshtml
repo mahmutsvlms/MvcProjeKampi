@@ -104,11 +104,11 @@
                                 <td>
                                     @if (@item.HeadingStatus)
                                     {
-                                        <button class="btn btn-success btnStatus">Aktif</button>
+                                        <button class="btn btn-success btnStatus " id="@item.HeadingID">Aktif</button>
                                     }
                                     else
                                     {
-                                        <button class="btn btn-danger btnStatus">Pasif</button>
+                                        <button class="btn btn-danger btnStatus" id="@item.HeadingID">Pasif</button>
                                     }
                                 </td>
                                 <td class="project-state">
@@ -144,4 +144,7 @@
 </body>
 </html>
 <a href="/Heading/AddHeading/" class="btn btn-primary">Yeni Başlık Girişi</a>
+@section web{
+    <script src="~/Scripts/web.js"></script>
+}
 

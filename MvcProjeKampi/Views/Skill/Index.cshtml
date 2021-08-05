@@ -1,0 +1,75 @@
+﻿@using EntityLayer.Concreate
+@model List<Skill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h1>Mahmut Sevilmiş</h1>
+    <h3>Sivas Cumhuriyet Üniversitesi - Yönetim Bilişim Sistemleri</h3>
+
+    @foreach (var item in Model)
+    {
+        <div class="wrap">
+            <p>@item.Name</p>
+            <div class="bar html delay-html" ><span>@item.PerValue%</span></div>
+        </div>
+    }
+
+
+
+
+</div>
+
+
+@section Skill{
+
+    <link href="~/Content/skill.css" rel="stylesheet" />
+
+    <script src="~/Scripts/skill-js/bars.js"></script>
+    <!--circle-chart-->
+    <script src="~/Scripts/skill-js/jquery-1.11.1.min.js"></script>
+    <!--//circle-chart-->
+    <!--ResponsiveTabs-->
+    <script src="~/Scripts/skill-js/easyResponsiveTabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.html').mouseover(function () {
+                $('.desc-html').css('display', 'block');
+                $('.html').mouseout(function () {
+                    $('.desc-html').css('display', 'none');
+                });
+            });
+
+            $('.css').mouseover(function () {
+                $('.desc-css').css('display', 'block');
+                $('.css').mouseout(function () {
+                    $('.desc-css').css('display', 'none');
+                });
+            });
+
+            $('.js').mouseover(function () {
+                $('.desc-js').css('display', 'block');
+                $('.js').mouseout(function () {
+                    $('.desc-js').css('display', 'none');
+                });
+            });
+
+            $('.jquery').mouseover(function () {
+                $('.desc-jquery').css('display', 'block');
+                $('.jquery').mouseout(function () {
+                    $('.desc-jquery').css('display', 'none');
+                });
+            });
+
+            $('.php').mouseover(function () {
+                $('.desc-php').css('display', 'block');
+                $('.php').mouseout(function () {
+                    $('.desc-php').css('display', 'none');
+                });
+            });
+        });
+    </script>
+}
+

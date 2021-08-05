@@ -59,6 +59,7 @@
     <Compile Include="Concreate\Heading.cs" />
     <Compile Include="Concreate\ImageFile.cs" />
     <Compile Include="Concreate\Message.cs" />
+    <Compile Include="Concreate\Skill.cs" />
     <Compile Include="Concreate\Writer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

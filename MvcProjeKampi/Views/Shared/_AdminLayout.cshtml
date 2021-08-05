@@ -205,26 +205,9 @@ to get the desired effect
     <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
     <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.btnStatus').click(function (event) {
-                var ID = $(this).attr("id");  //id değerini alıyoruz
-                $.ajax({
-                    type: 'POST',
-                    url: '/Heading/SetStatus/' + ID,  //işlem yaptığımız sayfayı belirtiyoruz
-                    dataType: 'json',
-                    success: function () {
-                        location.reload();
-                    },
-                    error: function () {
-                        alert('Hata oluştu.');
-                    }
-                });
 
-
-            });
-        });
-    </script>
+    @RenderSection("web", false)
+    @RenderSection("Skill", false)
 </body>
 </html>
 
