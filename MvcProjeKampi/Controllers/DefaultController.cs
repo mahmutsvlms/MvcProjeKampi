@@ -15,14 +15,14 @@ namespace MvcProjeKampi.Controllers
 
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         ContentManager cm = new ContentManager(new EfContentDal());
-            public ActionResult Headings()
+        public ActionResult Headings()
         {
             var headinglist = hm.GetList();
             return View(headinglist);
         }
-        public PartialViewResult Index()
+        public PartialViewResult Index(int id = 0)
         {
-            var contentlist = cm.GetList();
+            var contentlist = cm.GetListByHeadingID(id);
             return PartialView(contentlist);
         }
     }
