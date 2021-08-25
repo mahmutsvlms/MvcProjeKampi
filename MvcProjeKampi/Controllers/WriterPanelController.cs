@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -24,7 +26,7 @@ namespace MvcProjeKampi.Controllers
         }
 
         public ActionResult MyHeading(string p)
-        {  
+        {
             p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
             var values = hm.GetListByWriter(writeridinfo);
@@ -33,7 +35,7 @@ namespace MvcProjeKampi.Controllers
         [HttpGet]
         public ActionResult NewHeading()
         {
-            
+
             List<SelectListItem> valuecategory = (from x in cm.GetList()
                                                   select new SelectListItem
                                                   {
@@ -49,7 +51,7 @@ namespace MvcProjeKampi.Controllers
         {
             string writermailinfo = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == writermailinfo).Select(y => y.WriterID).FirstOrDefault();
-            
+
             p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             p.WriterID = writeridinfo;
             p.HeadingStatus = true;
@@ -85,9 +87,10 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("MyHeading");
         }
 
-        public ActionResult AllHeading()
+        public ActionResult AllHeading(int p = 1)
         {
-            var headings = hm.GetList();
+
+            var headings = hm.GetList().ToPagedList(p, 4);
             return View(headings);
         }
 
