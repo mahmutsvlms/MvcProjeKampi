@@ -22,6 +22,12 @@ namespace EntityLayer.Concreate
 
         [StringLength(200)]
         public string WriterMail { get; set; }
+
+        public Writer Get(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
+
         [StringLength(200)]
         public string WriterPassword { get; set; }
 
